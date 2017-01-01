@@ -1,0 +1,64 @@
+<div id="wrapper">
+	<a href="" class="btn btn-lg btn-success"><span
+		class="glyphicon glyphicon-pencil"></span> New Post</a>
+	<div id="content" ng-repeat="post in posts">
+
+		<div id="grey">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+
+
+						<p>
+							<img src="img/image2.jpg" id="blog-author-image">
+							<ba>Pramithas Dhakal</ba>
+						</p>
+						<p>
+							<bd>December 18, 2016</bd>
+						</p>
+						<h4>{{post.heading}}</h4>
+
+
+						<p href="" style="padding: 5px;" dd-text-collapse
+							dd-text-collapse-max-length="500"
+							dd-text-collapse-text="{{post.content}}"></p>
+
+
+						<button type="button" class="btn btn-primary btn-sm"
+							ng-click="incrementUpvotes(post)">Upvote |
+							{{post.upvotes}}</button>
+						<a href="" id="downvote">Downvote</a> <a
+							ng-click="isCommentBoxOpen =!isCommentBoxOpen" href="">Comments
+							<span id="comment-count">44+</span>
+						</a>
+						<div ng-show="isCommentBoxOpen" class="comment-wrapper">
+
+							<form name="commentForm">
+								<input type="text" placeholder="Add a comment..."
+									id="new-comment-box" ng-model="commentBody">
+								<button type="button" class="btn btn-primary btn-sm"
+									ng-click="addComment(commentBody)">Comment</button>
+							</form>
+							<div class="comments-list">
+								<ul ng-repeat="comment in comments" class="comments-holder-ul">
+
+									<li class="comment-holder" id="_1">
+										<div class="user-img">
+											<img src="/img/user.jpg" class="user-img-pic" />
+										</div>
+
+										<div class="comment-body">
+											<h3 class="username-field">{{comment.user}}</h3>
+
+											<div class="comment-text">{{comment.body}}</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

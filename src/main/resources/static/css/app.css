@@ -215,3 +215,11 @@ a img#home-icon {
 	float: right;
 	margin:100px;
 }
+
+#login_form {
+	padding:100px;
+	margin-left:450px;
+	margin-right:200px;
+	width:700px;
+}
+

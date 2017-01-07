@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.pramithas.models.User;
 import com.pramithas.repository.UserRepository;
+import com.pramithas.utils.SecurityUtils;
 
 /**
  * Spring Security success handler, specialized for Ajax requests.

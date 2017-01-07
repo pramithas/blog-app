@@ -24,14 +24,23 @@
 							dd-text-collapse-text="{{post.content}}"></p>
 
 
-						<button type="button" class="btn btn-primary btn-sm"
-							ng-click="incrementUpvotes(post)">Upvote |
-							{{post.upvotes}}</button>
-						<a href="" id="downvote">Downvote</a> <a
+						<button ng-disabled="!authenticated==true" type="button"
+							class="btn btn-primary btn-sm" ng-click="incrementUpvotes(post)">Upvote
+							| {{post.upvotes}}</button>
+						<a ng-show="!authenticated==true"
+							ng-click="isCommentBoxOpen =!isCommentBoxOpen" href=""
+							data-placement="bottom" data-html="true"
+							title="Like the Post? <br /> <span id='sub-content'>Login to upvote and comment</span>
+							<br /><a href='#/login'
+							class='btn btn-primary btn-sm'>Log In</a>"
+							onmouseenter="$(this).tooltip('show')">Comments <span
+							id="comment-count">44+</span>
+						</a> <a ng-show="authenticated==true"
 							ng-click="isCommentBoxOpen =!isCommentBoxOpen" href="">Comments
 							<span id="comment-count">44+</span>
 						</a>
-						<div ng-show="isCommentBoxOpen" class="comment-wrapper">
+						<div ng-show="isCommentBoxOpen && authenticated==true"
+							class="comment-wrapper">
 
 							<form name="commentForm">
 								<input type="text" placeholder="Add a comment..."

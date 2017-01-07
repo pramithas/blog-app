@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-	
+
 	@RequestMapping("/blog-home")
-	public String getHome(){
+	public String getHome() {
 		return "index";
 	}
+
+	
 }
